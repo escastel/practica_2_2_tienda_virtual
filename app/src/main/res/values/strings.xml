@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Tienda Virtual</string>
+    <string name="text_shoes">Zapatillas Nike</string>
+    <string name="text_t_shirt">Camiseta Málaga CF</string>
+    <string name="text_cap">Gorra Málaga CF</string>
+    <string name="price_shoes">99.99€</string>
+    <string name="price_t_shirt">69.99€</string>
+    <string name="price_cap">15.00€</string>
+    <string name="btn_see">Ver</string>
 </resources>
