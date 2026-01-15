@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -40,6 +39,7 @@ import com.example.tiendavirtual.ui.theme.TiendaVirtualTheme
  *
  * @see DetailsScreen
  * @see HomeScreen
+ * @see AppButton
  */
 @Composable
 fun ContentCard(
@@ -76,8 +76,10 @@ fun ContentCard(
                     color = Color.Gray
                 )
             }
-            Button( onClick = { onClick(img, text, price) }
-            ) { Text(stringResource(R.string.btn_see)) }
+            AppButton(
+                onClick = { onClick(img, text, price) },
+                text = stringResource(R.string.btn_see)
+            )
         }
     }
 }

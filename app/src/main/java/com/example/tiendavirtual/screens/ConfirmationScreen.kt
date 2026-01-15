@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -21,6 +20,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.tiendavirtual.R
+import com.example.tiendavirtual.components.AppButton
 import com.example.tiendavirtual.ui.theme.TiendaVirtualTheme
 
 /**
@@ -29,6 +29,9 @@ import com.example.tiendavirtual.ui.theme.TiendaVirtualTheme
  * 
  * @param  navHome Función que se ejecuta al hacer click sobre el botón de
  * `Volver a la Tienda`. Esta devuelve al usuario a la pantalla `Home`.
+ *
+ * @see AppButton
+ * @see HomeScreen
  */
 @Composable
 fun ConfirmationScreen(navHome: () -> Unit)
@@ -53,9 +56,10 @@ fun ConfirmationScreen(navHome: () -> Unit)
                 style = MaterialTheme.typography.bodyLarge
             )
             Spacer(modifier = Modifier.height(16.dp))
-            Button( onClick = navHome ) {
-                Text( text = stringResource(R.string.btn_return))
-            }
+            AppButton(
+                onClick = navHome,
+                text = stringResource(R.string.btn_return)
+            )
         }
     }
 }

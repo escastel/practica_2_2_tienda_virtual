@@ -2,6 +2,7 @@ package com.example.tiendavirtual.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -33,14 +34,14 @@ fun HomeScreen(navDetails: (Int, Int, Int) -> Unit)
 {
     Scaffold { paddingValues ->
         Column( modifier = Modifier
-                .verticalScroll(rememberScrollState())
                 .padding(paddingValues)
                 .padding(16.dp)
         ) {
             Text( text = stringResource(R.string.tittle_home) )
             Spacer( modifier = Modifier.height(16.dp) )
             Column( modifier = Modifier
-                    .fillMaxWidth()
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState())
                     .padding(4.dp)
             ) {
                 ContentCard(

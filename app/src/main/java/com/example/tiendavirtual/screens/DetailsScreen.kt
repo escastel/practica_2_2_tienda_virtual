@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -28,6 +27,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.tiendavirtual.R
+import com.example.tiendavirtual.components.AppButton
+import com.example.tiendavirtual.components.ProductDetails
 import com.example.tiendavirtual.ui.theme.TiendaVirtualTheme
 
 
@@ -43,6 +44,8 @@ import com.example.tiendavirtual.ui.theme.TiendaVirtualTheme
  * @param navConfirm Función que se ejecuta al hacer click sobre el botón de
  * `Comprar ahora`. Esta navega a la pantalla `Confirmation`.
  *
+ * @see AppButton
+ * @see ProductDetails
  * @see HomeScreen
  * @see ConfirmationScreen
  */
@@ -67,53 +70,23 @@ fun DetailsScreen(
                     .fillMaxWidth()
                     .height(250.dp)
             )
-            Column( modifier = Modifier
-                .weight(1f)
-                .verticalScroll(rememberScrollState())
-                .padding(16.dp)
-            ) {
-                Spacer(modifier = Modifier.height(16.dp))
-                Row(
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.fillMaxWidth()
-                ){
-                    Text(
-                        text = stringResource(text),
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Bold
-                    )
-                    Text(
-                        text = stringResource(price),
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                }
-                Spacer(modifier = Modifier.height(16.dp))
-                Text(
-                    text = stringResource(R.string.default_description),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = Color.Gray
-                )
-            }
             Spacer(modifier = Modifier.height(16.dp))
-            Button(
+            ProductDetails(
+                modifier = Modifier.weight(1f),
+                text = stringResource(text),
+                price = stringResource(price)
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            AppButton(
                 modifier = Modifier.fillMaxWidth().padding(16.dp),
-                onClick = navConfirm
-            ) {
-                Text(
-                    text = stringResource(R.string.btn_buy)
-                )
-            }
-            Button(
+                onClick = navConfirm,
+                text = stringResource(R.string.btn_buy)
+            )
+            AppButton(
                 modifier = Modifier.align(Alignment.CenterHorizontally),
-                onClick = navBack
-            ) {
-                Text(
-                    text = stringResource(R.string.btn_back)
-                )
-            }
+                onClick = navBack,
+                text = stringResource(R.string.btn_back)
+            )
             Spacer(modifier = Modifier.height(16.dp))
         }
     }
