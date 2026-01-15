@@ -5,6 +5,7 @@
     <string name="text_t_shirt">Camiseta Málaga CF</string>
     <string name="text_cap">Gorra Málaga CF</string>
     <string name="text_confirm">¡Compra realizada!</string>
+    <string name="text_error">Un error ha ocurrido</string>
     <string name="price_shoes">99.99€</string>
     <string name="price_t_shirt">69.90€</string>
     <string name="price_cap">15.00€</string>

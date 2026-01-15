@@ -1,6 +1,5 @@
 package com.example.tiendavirtual.navegation
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.navigation3.runtime.NavBackStack
 import androidx.navigation3.runtime.NavEntry
@@ -9,6 +8,7 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import com.example.tiendavirtual.screens.ConfirmationScreen
 import com.example.tiendavirtual.screens.DetailsScreen
+import com.example.tiendavirtual.screens.ErrorScreen
 import com.example.tiendavirtual.screens.HomeScreen
 
 /**
@@ -65,7 +65,12 @@ fun Navigation() {
                     )
                 }
                 else -> NavEntry(key = Routes.Error){
-                    Text("Error")
+                    ErrorScreen(
+                        navHome = {
+                            backStack.clear()
+                            backStack.add(Routes.Home)
+                        }
+                    )
                 }
             }
         }
