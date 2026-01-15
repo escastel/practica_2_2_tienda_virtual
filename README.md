@@ -6,6 +6,12 @@
 
 Una aplicación Android moderna desarrollada con **Jetpack Compose** que simula el flujo básico de una tienda de comercio electrónico. Este proyecto demuestra el uso de navegación segura por tipos, diseño de componentes reutilizables y gestión de estado básica en la UI.
 
+## Capturas de Pantalla
+
+| Home Screen | Details Screen | Confirmation Screen |
+|:-----------:|:--------------:|:-------------------:|
+| ![Captura de Pantalla](screenshots/home.png) | ![Captura de Pantalla](screenshots/details.png) | ![Captura de Pantalla](screenshots/confirm.png) |
+
 ## 🛠️ Tecnologías y Librerías
 
 El proyecto utiliza las últimas prácticas de desarrollo en Android:
