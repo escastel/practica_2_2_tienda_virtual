@@ -24,7 +24,8 @@ sealed class Routes: NavKey {
     @Serializable
     data class Details(
         @DrawableRes val img: Int,
-        @StringRes val text: Int
+        @StringRes val text: Int,
+        @Serializable val price: Int
     ): Routes()
 
     @Serializable

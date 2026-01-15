@@ -29,19 +29,17 @@ import com.example.tiendavirtual.ui.theme.TiendaVirtualTheme
  * @see ContentCard
  */
 @Composable
-fun HomeScreen(navDetails: (Int, Int) -> Unit)
+fun HomeScreen(navDetails: (Int, Int, Int) -> Unit)
 {
     Scaffold { paddingValues ->
-        Column(
-            modifier = Modifier
+        Column( modifier = Modifier
                 .verticalScroll(rememberScrollState())
                 .padding(paddingValues)
                 .padding(16.dp)
         ) {
-            Text(text = stringResource(R.string.tittle_home))
-            Spacer(modifier = Modifier.height(16.dp))
-            Column(
-                modifier = Modifier
+            Text( text = stringResource(R.string.tittle_home) )
+            Spacer( modifier = Modifier.height(16.dp) )
+            Column( modifier = Modifier
                     .fillMaxWidth()
                     .padding(4.dp)
             ) {
@@ -51,14 +49,14 @@ fun HomeScreen(navDetails: (Int, Int) -> Unit)
                     price = R.string.price_shoes,
                     onClick = navDetails
                 )
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer( modifier = Modifier.height(16.dp) )
                 ContentCard(
                     img = R.drawable.img_t_shirt,
                     text = R.string.text_t_shirt,
                     price = R.string.price_t_shirt,
                     onClick = navDetails
                 )
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer( modifier = Modifier.height(16.dp) )
                 ContentCard(
                     img = R.drawable.img_cap,
                     text = R.string.text_cap,
@@ -75,7 +73,7 @@ fun HomeScreen(navDetails: (Int, Int) -> Unit)
 fun HomeScreenPreview(){
     TiendaVirtualTheme {
        HomeScreen(
-           navDetails = { _, _ -> }
+           navDetails = { _, _, _ -> }
        )
     }
 }

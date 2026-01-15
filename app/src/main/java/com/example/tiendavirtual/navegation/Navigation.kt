@@ -35,9 +35,10 @@ fun Navigation() {
                 is Routes.Home -> NavEntry(key){
                     HomeScreen(
                         navDetails = {
-                            img, text -> backStack.add(Routes.Details(
+                            img, text, price -> backStack.add(Routes.Details(
                                 img = img,
-                                text = text
+                                text = text,
+                                price = price
                             ))
                         }
                     )
@@ -46,6 +47,7 @@ fun Navigation() {
                     DetailsScreen(
                         img = key.img,
                         text = key.text,
+                        price = key.price,
                         navBack = {
                             backStack.removeLastOrNull()
                         },

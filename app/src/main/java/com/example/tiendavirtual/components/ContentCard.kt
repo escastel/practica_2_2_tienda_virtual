@@ -3,13 +3,10 @@ package com.example.tiendavirtual.components
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -29,6 +26,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.tiendavirtual.R
 import com.example.tiendavirtual.screens.DetailsScreen
+import com.example.tiendavirtual.screens.HomeScreen
 import com.example.tiendavirtual.ui.theme.TiendaVirtualTheme
 
 /**
@@ -48,11 +46,9 @@ fun ContentCard(
     @DrawableRes img: Int,
     @StringRes text: Int,
     @StringRes price: Int,
-    onClick: (Int, Int) -> Unit
+    onClick: (Int, Int, Int) -> Unit
 ) {
-    Card(
-        modifier = Modifier.fillMaxWidth()
-    ) {
+    Card( modifier = Modifier.fillMaxWidth()) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
@@ -79,8 +75,7 @@ fun ContentCard(
                     color = Color.Gray
                 )
             }
-            Button(
-                onClick = { onClick(img, text) }
+            Button( onClick = { onClick(img, text, price) }
             ) { Text(stringResource(R.string.btn_see)) }
         }
     }
@@ -94,7 +89,7 @@ fun ContentCardPreview(){
             img = R.drawable.img_shoes,
             text = R.string.text_shoes,
             price = R.string.price_shoes,
-            onClick = { _, _ -> }
+            onClick = { _, _, _ -> }
         )
     }
 }
