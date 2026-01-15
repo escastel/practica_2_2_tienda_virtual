@@ -10,7 +10,7 @@ Una aplicación Android moderna desarrollada con **Jetpack Compose** que simula 
 
 | Home Screen | Details Screen | Confirmation Screen |
 |:-----------:|:--------------:|:-------------------:|
-| ![Captura de Pantalla](home.png) | ![Captura de Pantalla](details.png) | ![Captura de Pantalla](confirm.png) |
+| ![Captura de Pantalla](screenshoots/home.png) | ![Captura de Pantalla](screenshoots/details.png) | ![Captura de Pantalla](screenshoots/confirm.png) |
 
 ## 🛠️ Tecnologías y Librerías
 
