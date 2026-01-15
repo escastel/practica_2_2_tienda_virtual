@@ -67,6 +67,7 @@ fun ContentCard(
                 Text(
                     text = stringResource(text),
                     style = MaterialTheme.typography.titleMedium,
+                    color = Color.Black,
                     maxLines = 1
                 )
                 Text(
