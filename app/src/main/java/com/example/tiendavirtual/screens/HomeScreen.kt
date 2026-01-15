@@ -1,6 +1,5 @@
 package com.example.tiendavirtual.screens
 
-
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,6 +11,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.tiendavirtual.R
@@ -29,16 +29,16 @@ import com.example.tiendavirtual.ui.theme.TiendaVirtualTheme
  * @see ContentCard
  */
 @Composable
-fun HomeScreen(/*navDetails: (Int, Int) -> Unit*/)
+fun HomeScreen(navDetails: (Int, Int) -> Unit)
 {
-    Scaffold() { paddingValues ->
+    Scaffold { paddingValues ->
         Column(
             modifier = Modifier
                 .verticalScroll(rememberScrollState())
                 .padding(paddingValues)
                 .padding(16.dp)
         ) {
-            Text("Catálogo dispobible:")
+            Text(text = stringResource(R.string.tittle_home))
             Spacer(modifier = Modifier.height(16.dp))
             Column(
                 modifier = Modifier
@@ -49,21 +49,21 @@ fun HomeScreen(/*navDetails: (Int, Int) -> Unit*/)
                     img = R.drawable.img_shoes,
                     text = R.string.text_shoes,
                     price = R.string.price_shoes,
-                    onClick = {}
+                    onClick = navDetails
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 ContentCard(
                     img = R.drawable.img_t_shirt,
                     text = R.string.text_t_shirt,
                     price = R.string.price_t_shirt,
-                    onClick = {}
+                    onClick = navDetails
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 ContentCard(
                     img = R.drawable.img_cap,
                     text = R.string.text_cap,
                     price = R.string.price_cap,
-                    onClick = {}
+                    onClick = navDetails
                 )
             }
         }
@@ -74,6 +74,8 @@ fun HomeScreen(/*navDetails: (Int, Int) -> Unit*/)
 @Composable
 fun HomeScreenPreview(){
     TiendaVirtualTheme {
-       HomeScreen()
+       HomeScreen(
+           navDetails = { _, _ -> }
+       )
     }
 }

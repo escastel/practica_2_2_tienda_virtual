@@ -34,12 +34,12 @@ fun Navigation() {
             when (key){
                 is Routes.Home -> NavEntry(key){
                     HomeScreen(
-                        /*navDetails = {
+                        navDetails = {
                             img, text -> backStack.add(Routes.Details(
                                 img = img,
                                 text = text
                             ))
-                        }*/
+                        }
                     )
                 }
                 is Routes.Details -> NavEntry(key){
